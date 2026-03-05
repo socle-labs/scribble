@@ -1,0 +1,25 @@
+{
+	"name": "@scribble/extension",
+	"version": "0.0.1",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"dev": "bun run build --watch",
+		"build": "bun run build:background && bun run build:content && bun run build:popup",
+		"build:background": "bun build src/background/index.ts --outdir dist --target browser --entry-naming background.js",
+		"build:content": "bun build src/content/index.ts --outdir dist --target browser --entry-naming content.js",
+		"build:popup": "bun build src/popup/index.tsx --outdir dist --target browser --entry-naming popup.js",
+		"typecheck": "tsc --noEmit",
+		"lint": "biome check ."
+	},
+	"dependencies": {
+		"react": "^19.0.0",
+		"react-dom": "^19.0.0"
+	},
+	"devDependencies": {
+		"@types/chrome": "^0.0.300",
+		"@types/react": "^19.0.0",
+		"@types/react-dom": "^19.0.0",
+		"typescript": "^5.7.0"
+	}
+}

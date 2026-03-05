@@ -1,0 +1,106 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--color-card: var(--card);
+	--color-card-foreground: var(--card-foreground);
+	--color-popover: var(--popover);
+	--color-popover-foreground: var(--popover-foreground);
+	--color-primary: var(--primary);
+	--color-primary-foreground: var(--primary-foreground);
+	--color-secondary: var(--secondary);
+	--color-secondary-foreground: var(--secondary-foreground);
+	--color-muted: var(--muted);
+	--color-muted-foreground: var(--muted-foreground);
+	--color-accent: var(--accent);
+	--color-accent-foreground: var(--accent-foreground);
+	--color-destructive: var(--destructive);
+	--color-destructive-foreground: var(--destructive-foreground);
+	--color-border: var(--border);
+	--color-input: var(--input);
+	--color-ring: var(--ring);
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--radius-sm: calc(var(--radius) - 4px);
+	--radius-md: calc(var(--radius) - 2px);
+	--radius-lg: var(--radius);
+	--radius-xl: calc(var(--radius) + 4px);
+
+	/* Scribble brand tokens */
+	--color-scribble-950: #0c0a1d;
+	--color-scribble-900: #14112e;
+	--color-scribble-800: #1e1a42;
+	--color-scribble-700: #2d2760;
+	--color-scribble-600: #3d357e;
+	--color-scribble-500: #6366f1;
+	--color-scribble-400: #818cf8;
+	--color-scribble-300: #a5b4fc;
+	--color-scribble-200: #c7d2fe;
+	--color-scribble-100: #e0e7ff;
+	--color-scribble-50: #eef2ff;
+}
+
+:root {
+	--radius: 0.625rem;
+
+	--background: #ffffff;
+	--foreground: #0c0a1d;
+	--card: #ffffff;
+	--card-foreground: #0c0a1d;
+	--popover: #ffffff;
+	--popover-foreground: #0c0a1d;
+	--primary: #6366f1;
+	--primary-foreground: #ffffff;
+	--secondary: #f4f4f5;
+	--secondary-foreground: #0c0a1d;
+	--muted: #f4f4f5;
+	--muted-foreground: #71717a;
+	--accent: #f4f4f5;
+	--accent-foreground: #0c0a1d;
+	--destructive: #ef4444;
+	--destructive-foreground: #ffffff;
+	--border: #e4e4e7;
+	--input: #e4e4e7;
+	--ring: #6366f1;
+	--sidebar: #fafafa;
+	--sidebar-foreground: #0c0a1d;
+}
+
+.dark {
+	--background: #0c0a1d;
+	--foreground: #f5f5f5;
+	--card: #14112e;
+	--card-foreground: #e5e5e5;
+	--popover: #14112e;
+	--popover-foreground: #e5e5e5;
+	--primary: #818cf8;
+	--primary-foreground: #0c0a1d;
+	--secondary: #1e1a42;
+	--secondary-foreground: #e5e5e5;
+	--muted: #1e1a42;
+	--muted-foreground: #a1a1aa;
+	--accent: #1e1a42;
+	--accent-foreground: #f5f5f5;
+	--destructive: #ef4444;
+	--destructive-foreground: #f5f5f5;
+	--border: #1e1a42;
+	--input: #2d2760;
+	--ring: #818cf8;
+	--sidebar: #0c0a1d;
+	--sidebar-foreground: #e5e5e5;
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+}
