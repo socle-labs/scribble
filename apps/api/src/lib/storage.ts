@@ -65,7 +65,9 @@ class S3Storage implements StorageProvider {
 		this.bucket = env.S3_BUCKET!;
 		this.client = new S3Client({
 			region: env.S3_REGION ?? "us-east-1",
-			...(env.S3_ENDPOINT ? { endpoint: env.S3_ENDPOINT } : {}),
+			...(env.S3_ENDPOINT
+				? { endpoint: env.S3_ENDPOINT, forcePathStyle: true }
+				: {}),
 			credentials: {
 				accessKeyId: env.S3_ACCESS_KEY_ID!,
 				secretAccessKey: env.S3_SECRET_ACCESS_KEY!,
